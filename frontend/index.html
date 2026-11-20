@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>配送路线效率分析 · Delivery Route Analytics</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>配送路线效率分析平台</h1>
+    <div class="sub">订单 · 定位点 · 道路事件 · 司机状态 — 全链路可回溯（点级证据 + 规则版本）</div>
+  </div>
+  <div class="spacer"></div>
+  <span class="badge" id="activeRule">规则版本 —</span>
+  <span class="badge" id="dataMode">本地数据</span>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="filters">
+      <input id="searchBox" placeholder="搜索司机 / 路线 / 订单…" style="flex:1">
+      <select id="sortSel">
+        <option value="time">按时间</option>
+        <option value="score">按评分</option>
+        <option value="anom">按异常数</option>
+      </select>
+    </div>
+    <div id="routeList"></div>
+  </aside>
+
+  <main class="main">
+    <div class="stats" id="statBar"></div>
+    <div class="tabs" id="tabs">
+      <div class="tab active" data-tab="route">路线分析</div>
+      <div class="tab" data-tab="rules">规则版本与修订</div>
+      <div class="tab" data-tab="cleaning">点级清洗轨迹</div>
+    </div>
+    <div id="view"></div>
+  </main>
+</div>
+
+<div id="toastHost"></div>
+<script src="app.js"></script>
+</body>
+</html>

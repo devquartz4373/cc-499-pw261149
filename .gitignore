@@ -32,3 +32,8 @@ test-results/
 *.sqlite3-shm
 *.sqlite3-journal
 !*.traineddata.gz
+
+# application data
+/data/
+backend/data/
+*.db
